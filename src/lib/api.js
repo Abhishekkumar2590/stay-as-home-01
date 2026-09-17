@@ -3,9 +3,13 @@ import { assets, roomsDummyData, hotelDummyData, userBookingsDummyData } from '.
 const LOCAL_API_URL = 'http://127.0.0.1:8000/api'
 
 const getApiBaseUrl = () => {
-    const configuredUrl = import.meta.env.VITE_API_URL
-    if (configuredUrl) {
-        return configuredUrl.replace(/\/+$/, '')
+    let configuredUrl = import.meta.env.VITE_API_URL
+    if (configuredUrl && typeof configuredUrl === 'string') {
+        configuredUrl = configuredUrl.trim().replace(/\/+$/, '')
+        if (!configuredUrl.endsWith('/api')) {
+            configuredUrl = `${configuredUrl}/api`
+        }
+        return configuredUrl
     }
     return LOCAL_API_URL
 }

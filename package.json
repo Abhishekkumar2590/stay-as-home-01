@@ -13,6 +13,7 @@
     "@cashfreepayments/cashfree-js": "^1.0.7",
     "@clerk/clerk-react": "^5.61.9",
     "@tailwindcss/vite": "^4.3.3",
+    "@vercel/analytics": "^2.0.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.2"
